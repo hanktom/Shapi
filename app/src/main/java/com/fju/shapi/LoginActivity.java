@@ -56,12 +56,12 @@ public class LoginActivity extends AppCompatActivity {
             startActivity(intent);
         }else {
 //            edAlert.setText("xxx");
-            Toast xToast = Toast.makeText(this,"登入失敗xxx",Toast.LENGTH_LONG);
+            Toast xToast = Toast.makeText(this,"xxx登入失敗xxx",Toast.LENGTH_LONG);
             xToast.setGravity(Gravity.TOP|Gravity.LEFT, 10, 850);
             xToast.show();
            // Toast.makeText(this, "xxx", Toast.LENGTH_LONG).show();
-            edEmail.setText(" ");
-            edPassword.setText(" ");
+            edEmail.setText("");
+            edPassword.setText("");
         }
     }
 

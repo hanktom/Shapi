@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     private static final int RC_LOGIN = 7800;
-    boolean login = false;
+    boolean lllogin = false;
     List products = DummyData.getProducts();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,14 +33,15 @@ public class MainActivity extends AppCompatActivity {
         recycler.setAdapter(new ProductAdapter());
     }
     public void login(View view){
-        Intent login = new Intent(this,LoginActivity.class);
-        startActivity(login);
+       Intent login = new Intent(this,LoginActivity.class);
+   startActivity(login);
+//        if (!lllogin) {
+//            Intent intent = new Intent(this, LoginActivity.class);
+//            startActivityForResult(intent, RC_LOGIN);
+//        }
     }
 
-    if (!login) {
-        Intent intent = new Intent(this, LoginActivity.class);
-        startActivityForResult(intent, RC_LOGIN);
-    }
+
 
     class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductViewHolder>{
         @NonNull
@@ -53,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public void onBindViewHolder(@NonNull ProductViewHolder holder, int position) {
-            holder.productName.setText((CharSequence) products.get(position));
+//            holder.productName.setText((CharSequence) products.get(position));
             //holder.productImage.setImageURI();
         }
 
