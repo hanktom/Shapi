@@ -44,4 +44,5 @@ public class News {
         this.date = date;
         this.title = title;
         this.content = content;
-    }}
+    }
+}
