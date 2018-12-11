@@ -10,4 +10,6 @@ public class DummyData {
                 new Product(2, "aaa", "blablabla", 30, 10),
                 new Product(3, "bbb", "aaaaaaaaaaa", 380, 6));
     }
+
+
 }

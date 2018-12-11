@@ -17,7 +17,8 @@ import com.fju.shapi.data.Product;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    List products = DummyData.getProducts();
+    boolean login = false;
+    List<Product> products = DummyData.getProducts();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,8 +29,10 @@ public class MainActivity extends AppCompatActivity {
         recycler.setAdapter(new ProductAdapter());
     }
     public void login(View view){
-        Intent login = new Intent(this,LoginActivity.class);
-        startActivity(login);
+        if(!login) {
+            Intent login = new Intent(this, LoginActivity.class);
+            startActivity(login);
+        }
     }
 
     class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductViewHolder>{
@@ -42,7 +45,10 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public void onBindViewHolder(@NonNull ProductViewHolder holder, int position) {
-            holder.productName.setText((CharSequence) products.get(position));
+            holder.productName.setText(products.get(position).getName());
+            holder.productInfo.setText(products.get(position).getInfo());
+            holder.productPrice.setText(String.valueOf(products.get(position).getPrice()));
+            holder.productStock.setText(String.valueOf(products.get(position).getStock()));
             //holder.productImage.setImageURI();
         }
 
@@ -53,10 +59,16 @@ public class MainActivity extends AppCompatActivity {
 
         class ProductViewHolder extends RecyclerView.ViewHolder{
             TextView productName;
+            TextView productInfo;
+            TextView productPrice;
+            TextView productStock;
             ImageView productImage;
             public ProductViewHolder(View itemView) {
                 super(itemView);
-                productName = itemView.findViewById(R.id.tv_product);
+                productName = itemView.findViewById(R.id.tv_productName);
+                productInfo = itemView.findViewById(R.id.tv_productInfo);
+                productPrice = itemView.findViewById(R.id.tv_productPrice);
+                productStock = itemView.findViewById(R.id.tv_productStock);
                 productImage = itemView.findViewById(R.id.im_product);
             }
         }
