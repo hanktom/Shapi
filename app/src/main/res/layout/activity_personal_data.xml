@@ -10,9 +10,10 @@
         android:id="@+id/tv-PD-title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="8dp"
-        android:text="Personal Information"
+        android:text="@string/personal_information"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.056"
@@ -24,65 +25,63 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginEnd="40dp"
         android:onClick="save"
-        android:text="save"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="@string/save"
+        android:textAllCaps="true"
+        app:layout_constraintBottom_toBottomOf="@+id/btn-PD-home"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.932"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn-PD-home"
+        app:layout_constraintTop_toTopOf="@+id/btn-PD-home"
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/ed-PD-name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
         android:ems="10"
-        android:hint="Name"
         android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/tv-PD-title" />
 
     <EditText
         android:id="@+id/ed-PD-gender"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:ems="10"
-        android:hint="Gender"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="@+id/ed-PD-birth"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/ed-PD-birth"
         app:layout_constraintTop_toBottomOf="@+id/ed-PD-birth" />
 
     <EditText
         android:id="@+id/ed-PD-birth"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:ems="10"
-        android:hint="Birth(DD/MM/YYYY)"
+        android:hint="@string/dd_mm_yyyy"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="@+id/ed-PD-name"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/ed-PD-name"
         app:layout_constraintTop_toBottomOf="@+id/ed-PD-name" />
 
     <EditText
         android:id="@+id/ed-PD-address"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="164dp"
         android:ems="10"
-        android:hint="Address"
         android:inputType="textMultiLine"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/ed-PD-tel"
+        app:layout_constraintStart_toStartOf="@+id/ed-PD-tel"
         app:layout_constraintTop_toBottomOf="@+id/ed-PD-tel"
         app:layout_constraintVertical_bias="0.0" />
 
@@ -90,25 +89,96 @@
         android:id="@+id/ed-PD-tel"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:ems="10"
-        android:hint="TEL"
         android:inputType="number"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/ed-PD-gender"
+        app:layout_constraintStart_toStartOf="@+id/ed-PD-gender"
         app:layout_constraintTop_toBottomOf="@+id/ed-PD-gender" />
 
     <Button
         android:id="@+id/btn-PD-home"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:text="home"
+        android:layout_marginStart="36dp"
+        android:layout_marginBottom="36dp"
+        android:text="@string/home"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btn-PD-save"
-        app:layout_constraintHorizontal_bias="0.951"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="@+id/guideline" />
+
+    <TextView
+        android:id="@+id/tv-PD-name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/name"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/ed-PD-name"
+        app:layout_constraintEnd_toStartOf="@+id/ed-PD-name"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ed-PD-address"
-        app:layout_constraintVertical_bias="0.779" />
+        app:layout_constraintTop_toTopOf="@+id/ed-PD-name" />
+
+    <TextView
+        android:id="@+id/tv-PD-birth"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/birth"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/ed-PD-birth"
+        app:layout_constraintEnd_toStartOf="@+id/ed-PD-birth"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ed-PD-birth" />
+
+    <TextView
+        android:id="@+id/tv-PD-gender"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/gender"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/ed-PD-gender"
+        app:layout_constraintEnd_toStartOf="@+id/ed-PD-gender"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ed-PD-gender" />
+
+    <TextView
+        android:id="@+id/tv-PD-tel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/tel"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/ed-PD-tel"
+        app:layout_constraintEnd_toStartOf="@+id/ed-PD-tel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ed-PD-tel" />
+
+    <TextView
+        android:id="@+id/tv-PD-address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/address"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="@+id/ed-PD-address"
+        app:layout_constraintEnd_toStartOf="@+id/ed-PD-address"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ed-PD-address" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="264dp" />
 
 </android.support.constraint.ConstraintLayout>

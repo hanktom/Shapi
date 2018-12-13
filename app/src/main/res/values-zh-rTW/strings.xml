@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Shapi</string>
+    <string name="personal_information">個人資料</string>
+    <string name="save">儲存</string>
+    <string name="name">姓名</string>
+    <string name="gender">性別</string>
+    <string name="dd_mm_yyyy">(日/月/西元)</string>
+    <string name="address">地址</string>
+    <string name="tel">電話</string>
+    <string name="home">回首頁</string>
+    <string name="birth">生日</string>
+</resources>

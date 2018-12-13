@@ -45,6 +45,7 @@ public class PersonalDataActivity extends AppCompatActivity {
         edAddress = findViewById(R.id.ed_PD_address);
         count = 0;
     }
+
     public void save(View view) {
         findViews();
         String tmpName = edName.getText().toString();
